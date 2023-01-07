@@ -1,0 +1,59 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	/*Користувач вводить з клавіатури число, необхідно
+	показати на екран суму його цифр.
+	Примітка.Наприклад, користувач ввів число 12345.
+	На екрані має з, явитися повідомлення про те, що
+	сума цифр числа є 15.*/
+	int digit;
+	cout << "Enter the digit!" << endl;
+	cin >> digit;
+    if (digit <= 0)
+    {
+        cout << "Error, enter another digit!" << endl;
+    }
+    else if (digit >= 0)
+    {
+        if (digit >= 10000 && digit <= 99999)
+        {
+            int a = digit / 10000;
+            int b = (digit / 1000) % 10;
+            int c = (digit / 100) % 10;
+            int d = (digit / 10) % 10;
+            int e = digit % 10;
+            cout <<a+b+c+d+e;
+        }
+        else if (digit >= 1000 && digit <= 9999)
+        {
+            int a = (digit / 1000) % 10;
+            int b = (digit / 100) % 10;
+            int c = (digit / 10) % 10;
+            int d = digit % 10;
+            cout << a + b + c + d;
+        }
+        else if (digit >= 100 && digit <= 999)
+        {
+            int a = (digit / 100) % 10;
+            int b = (digit / 10) % 10;
+            int c = digit % 10;
+            cout << a + b + c;
+        }
+        else if (digit >= 10 && digit <= 99)
+        {
+            int a = (digit / 10) % 10;
+            int b = digit % 10;
+            cout << a + b;
+        }
+        else if (digit >= 1 && digit <= 9)
+        {
+            cout << "You enter one digit" << endl;
+        }
+        else
+        {
+            cout << "You enter incorrect digit" << endl;
+        }
+    }
+}
